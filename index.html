@@ -1,11 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel de Administración Escolar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.5/sweetalert2.all.min.js"></script>
+    <script src="js/utileria.js"></script>
+    <script src="js/sidebar.js" defer></script>
+    <script src="js/index.js" defer></script>
 </head>
+
 <body>
-    <script src="js/index.js"></script>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-titulo">ADMINISTRACION</span>
+            <button class="sidebar-cerrar" id="cerrarSidebar">X</button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="sidebar-menu-item">
+                <button class="menu-boton" id="menuUsuarios">
+                    <span class="menu-texto">Usuarios</span>
+                    <span class="menu-flecha" id="flechaUsuarios">▼</span>
+                </button>
+                <div class="submenu" id="submenuUsuarios">
+                    <a href="#" class="submenu-item" id="menuCaptura">Captura</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            Control de Alumnos v1.0
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="contenido-principal">
+        <!-- HEADER -->
+        <header class="header">
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <span class="header-titulo">Gestion de Alumnado Escolar</span>
+
+            <div class="header-usuario">
+                <button class="user-dropdown-btn" id="userDropdownBtn">
+                    <span id="navbarUsuario">Cargando...</span>
+                    <span class="dropdown-flecha">▼</span>
+                </button>
+                <div class="user-dropdown-menu" id="userDropdownMenu">
+                    <button id="btnSalir">Salir del sistema</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+            <!-- VISTA BIENVENIDA -->
+            <div id="vistaBienvenida" class="vista-bienvenida">
+                <div class="icono-bienvenida">&#127979;</div>
+                <h2>Bienvenido al Sistema Escolar</h2>
+                <p>Selecciona una opcion del menu lateral izquierdo para comenzar a gestionar los modulos de la institucion.</p>
+            </div>
+
+            <!-- VISTA CAPTURA -->
+            <div id="vistaCaptura" class="vista-captura" style="display: none;">
+                <div class="captura-header">
+                    <h2>Formulario de Captura de Alumnos</h2>
+                    <p>Registra la informacion del alumno utilizando reglas de negocio e institucionales estrictas.</p>
+                </div>
+
+                <form id="formularioAlumno" class="formulario-captura" novalidate>
+                    <div class="grid-campos">
+                        <div class="grupo-campo" id="grupoNombre">
+                            <label for="nombre">Nombre Completo del Alumno</label>
+                            <input type="text" id="nombre" placeholder="Ej. Juan Perez Gomez">
+                            <span class="mensaje-error">El nombre debe contener solo letras y espacios.</span>
+                        </div>
+
+                        <div class="grupo-campo" id="grupoNumControl">
+                            <label for="numControl">Numero de Control (6 digitos)</label>
+                            <input type="text" id="numControl" maxlength="6" placeholder="Ej. 240915">
+                            <span class="mensaje-error">Debe contener exactamente 6 digitos.</span>
+                        </div>
+
+                        <div class="grupo-campo" id="grupoCorreo">
+                            <label for="correo">Correo Electronico</label>
+                            <input type="email" id="correo" placeholder="alumno@correo.com">
+                            <span class="mensaje-error">Introduce un formato de correo valido.</span>
+                        </div>
+
+                        <div class="grupo-campo" id="grupoContrasena">
+                            <label for="contrasena">Contraseña del Alumno</label>
+                            <input type="password" id="contrasena" placeholder="••••••••">
+                            <span class="mensaje-error">Minimo 8 caracteres, combinando letras y numeros.</span>
+                        </div>
+
+                        <div class="grupo-campo" id="grupoEdad">
+                            <label for="edad">Edad</label>
+                            <input type="text" id="edad" maxlength="3" placeholder="Ej. 19">
+                            <span class="mensaje-error">Solo numeros enteros (Rango: 1-100).</span>
+                        </div>
+                    </div>
+
+                    <div class="botones-formulario">
+                        <button type="submit" class="boton-primario">Validar y Registrar Alumno</button>
+                    </div>
+                </form>
+
+                <!-- Tabla de alumnos registrados -->
+                <div id="tablaUsuarios" style="margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px; font-size: 18px; color: #1f2937;">Alumnos Registrados</h3>
+                    <div style="overflow-x: auto;">
+                        <table class="tabla-usuarios">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>N. Control</th>
+                                    <th>Correo</th>
+                                    <th>Edad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpoTabla">
+                                <!-- Los alumnos se cargaran aqui -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Fondo oscuro para movil -->
+    <div class="sidebar-overlay" id="overlay"></div>
+
 </body>
+
 </html>

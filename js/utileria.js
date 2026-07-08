@@ -22,7 +22,6 @@ function calcularEdad(fechaNacimiento) {
     }
     const hoy = new Date();
     const fechaCumple = new Date(fechaNacimiento);
-    // Evitar desfase de zona horaria al crear el objeto Date
     const cumpleUTC = new Date(fechaCumple.getUTCFullYear(), fechaCumple.getUTCMonth(), fechaCumple.getUTCDate());
     let edadCalculada = hoy.getFullYear() - cumpleUTC.getFullYear();
     const diferenciaMeses = hoy.getMonth() - cumpleUTC.getMonth();
@@ -38,7 +37,7 @@ function esMayorDeEdad(fechaNacimiento) {
 }
 
 function validarPassword(contrasena) {
-    const expresionRegular = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._\-#+=\[\]{}()^|~`:;,<>\/\\\"\'\`])[A-Za-z\d@$!%*?&._\-#+=\[\]{}()^|~`:;,<>\/\\\"\'\`]{8,}$/;
+    const expresionRegular = /^[A-Za-z\d]{8,}$/;
     return expresionRegular.test(contrasena);
 }
 
