@@ -1,15 +1,10 @@
-<img width="1898" height="305" alt="image" src="https://github.com/user-attachments/assets/cd87bbc0-792d-4c39-bbbd-e4b262f5f7a3" /># Actividad 5 - Proyecto de Login
-
 ## Portada
 
 **Proyecto:** Sistema de Login y Panel de Usuario
 **Materia / Actividad:** Actividad 5
 
-**Integrantes del equipo:**
-<!-- Reemplazar con los nombres de los alumnos del equipo -->
-- José Daniel Cruz Barrera - 23160879
+**Integrantes del equipo:**- José Daniel Cruz Barrera - 23160879
 - David Efraín José Ramos - 23160972
-<!-- Agregar o quitar filas según el número de integrantes -->
 
 **Descripción breve:**
 Sistema web de dos pantallas: una pantalla de acceso (`login.html`) que valida las credenciales del usuario, y una pantalla principal (`index.html`) que simula un panel de sistema con sidebar y navbar, donde se captura información adicional de usuarios y alumnos. El proyecto se desarrolla con HTML, CSS y JavaScript puro, y utiliza `localStorage` como medio de almacenamiento de datos.
