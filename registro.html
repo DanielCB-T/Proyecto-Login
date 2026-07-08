@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/utileria.js"></script>
+    <script src="js/registro.js" defer></script>
+</head>
+
+<body>
+    <div class="contenedor">
+        
+        <h1>Crear Cuenta</h1>
+        <p class="subtitulo">Ingresa tus datos para registrarte.</p>
+
+        <form id="formularioRegistro" novalidate>
+            <div class="cuadricula-formulario">
+                <!-- Nombre -->
+                <div class="grupo-campo ancho-completo" id="grupoNombre">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez López">
+                    <span class="mensaje-error">El nombre debe contener solo letras y espacios.</span>
+                </div>
+
+                <!-- Correo -->
+                <div class="grupo-campo" id="grupoCorreo">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com">
+                    <span class="mensaje-error">Introduce un formato de correo válido.</span>
+                </div>
+
+                <!-- Fecha de Nacimiento -->
+                <div class="grupo-campo" id="grupoFechaNacimiento">
+                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                    <span class="mensaje-error">Debes ser mayor de edad (18 años o más) para registrarte.</span>
+                </div>
+
+                <!-- Teléfono -->
+                <div class="grupo-campo" id="grupoTelefono">
+                    <label for="telefono">Teléfono (10 dígitos)</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 5512345678">
+                    <span class="mensaje-error">El teléfono debe contener exactamente 10 dígitos.</span>
+                </div>
+
+                <!-- CURP -->
+                <div class="grupo-campo" id="grupoCURP">
+                    <label for="curp">CURP (México)</label>
+                    <input type="text" id="curp" name="curp" placeholder="Ej. ABCD123456HDFRND01"
+                        style="text-transform: uppercase;">
+                    <span class="mensaje-error">El formato de la CURP es incorrecto.</span>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="grupo-campo" id="grupoContrasena">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena"
+                        placeholder="Mín. 8 caracteres, 1 mayús, 1 min, 1 núm, 1 esp">
+                    <span class="mensaje-error">Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un
+                        número y un carácter especial.</span>
+                </div>
+
+                <!-- Confirmar Contraseña -->
+                <div class="grupo-campo" id="grupoConfirmarContrasena">
+                    <label for="confirmarContrasena">Confirmar Contraseña</label>
+                    <input type="password" id="confirmarContrasena" name="confirmarContrasena"
+                        placeholder="Repite tu contraseña">
+                    <span class="mensaje-error">Las contraseñas no coinciden o excede 20 caracteres.</span>
+                </div>
+            </div>
+
+            <button type="submit" class="boton-primario">Registrarse</button>
+        </form>
+
+        <p class="texto-pie">¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    </div>
+
+    <!-- Ventana Modal de Edad -->
+    <div class="modal-fondo" id="modalEdad">
+        <div class="modal-contenido">
+            <h2 class="titulo-modal">Edad Calculada</h2>
+            <p class="cuerpo-modal" id="textoModalEdad">Tienes X años.</p>
+            <button class="boton-secundario" id="cerrarModal">Entendido</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

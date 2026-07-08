@@ -1,0 +1,1 @@
+console.log(localStorage); //Llamada a localStorage para ver los usuarios ingresados

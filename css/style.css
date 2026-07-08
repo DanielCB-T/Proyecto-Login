@@ -1,0 +1,225 @@
+:root {
+    --color-fondo: #f4f4f9;
+    --color-contenedor: #ffffff;
+    --color-borde: #cccccc;
+    --color-texto-principal: #333333;
+    --color-texto-secundario: #666666;
+    --color-acento: #0066cc;
+    --color-acento-hover: #0052a3;
+    --color-exito: #28a745;
+    --color-error: #dc3545;
+    --color-fondo-input: #ffffff;
+    --radio-borde: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+
+.contenedor {
+    background-color: var(--color-contenedor);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor.pequeno {
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #111111;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: var(--color-texto-secundario);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cuadricula-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.ancho-completo {
+    grid-column: span 2;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.grupo-campo label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--color-texto-principal);
+}
+
+.grupo-campo input {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-fondo-input);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    color: var(--color-texto-principal);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.grupo-campo input:focus {
+    border-color: var(--color-acento);
+}
+
+.grupo-campo.valido input {
+    border-color: var(--color-exito);
+    background-color: #e8f5e9;
+}
+
+.grupo-campo.invalido input {
+    border-color: var(--color-error);
+    background-color: #fde8e8;
+}
+
+.mensaje-error {
+    font-size: 11px;
+    color: var(--color-error);
+    margin-top: 5px;
+    display: none;
+}
+
+.grupo-campo.invalido .mensaje-error {
+    display: block;
+}
+
+.boton-primario {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-acento);
+    border: none;
+    border-radius: var(--radio-borde);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.boton-primario:hover {
+    background-color: var(--color-acento-hover);
+}
+
+.boton-secundario {
+    padding: 8px 20px;
+    background-color: #eeeeee;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    color: var(--color-texto-principal);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.boton-secundario:hover {
+    background-color: #dddddd;
+}
+
+.texto-pie {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--color-texto-secundario);
+}
+
+.texto-pie a {
+    color: var(--color-acento);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.texto-pie a:hover {
+    text-decoration: underline;
+}
+
+.modal-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-fondo.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 25px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.titulo-modal {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.cuerpo-modal {
+    font-size: 14px;
+    color: var(--color-texto-principal);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .cuadricula-formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .ancho-completo {
+        grid-column: span 1;
+    }
+
+    .contenedor {
+        padding: 20px 15px;
+    }
+}
