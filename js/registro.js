@@ -145,7 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 telefono: campoTelefono.value,
                 curp: campoCURP.value.toUpperCase()
             });
-            alert('¡Registro exitoso!');
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro exitoso',
+                text: 'Ahora puede usar sus credenciales para ingresar al sistema.'
+            });
 
             //Aqui se pondra el codigo para guardar los datos
             
@@ -177,7 +181,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } else {
             console.log('Formulario con errores. Corrígelos antes de enviar.');
-            alert('Por favor, corrige los errores en el formulario.');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Verifique sus datos',
+                text: 'Por favor, registre los datos de acuerdo a lo que se pide y no deje campos vacios.'
+            });
         }
     });
 });
