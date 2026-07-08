@@ -47,8 +47,8 @@ También se conserva `registro.html`, utilizado para dar de alta las cuentas con
 ```
 Proyecto-Login/
 ├── css/
-│   ├── style.css        # Estilos generales de login y registro
-│   └── index.css        # Estilos del panel principal: sidebar, navbar y contenido
+│   ├── style.css        # Estilos generales 
+│   └── index.css        
 ├── img/                  # Recursos gráficos del proyecto
 ├── js/
 │   ├── utileria.js       # Librería de funciones de validación reutilizables
