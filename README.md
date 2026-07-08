@@ -1,4 +1,4 @@
-# Actividad 5 - Proyecto de Login
+<img width="1898" height="305" alt="image" src="https://github.com/user-attachments/assets/cd87bbc0-792d-4c39-bbbd-e4b262f5f7a3" /># Actividad 5 - Proyecto de Login
 
 ## Portada
 
@@ -74,8 +74,7 @@ Proyecto-Login/
 3. Al enviar el formulario, si la validación es correcta (de forma simulada, sin backend), el usuario es redirigido a `index.html`.
 4. En `index.html`, el nombre o correo del usuario que inició sesión se muestra en el navbar.
 5. Desde el sidebar, el usuario puede navegar al menú **Usuarios > Captura** para registrar nuevos usuarios o alumnos.
-6. Al capturar la fecha de nacimiento de un alumno, se muestra un modal indicando si es mayor o menor de edad.
-7. Al dar clic en el nombre de usuario del navbar, se despliega un menú con la opción **Salir del sistema**, que redirige nuevamente a `login.html`, simulando el cierre de sesión.
+6. Al dar clic en el nombre de usuario del navbar, se despliega un menú con la opción **Salir del sistema**, que redirige nuevamente a `login.html`, simulando el cierre de sesión.
 
 ## Estructura Visual de index.html
 
@@ -128,11 +127,7 @@ El archivo `js/utileria.js` funciona como una pequeña **librería de validacion
 | `validarCorreo` | Verifica que el correo tenga un formato válido. |
 | `soloLetras` | Verifica que un texto contenga únicamente letras y espacios (incluye acentos y ñ). |
 | `validarLongitud` | Verifica que un valor no exceda (o cumpla) una longitud determinada; se utiliza, entre otros casos, para validar el número de control de 6 dígitos. |
-| `calcularEdad` | Calcula la edad a partir de una fecha de nacimiento. |
-| `esMayorDeEdad` | Determina si la edad calculada es mayor o igual a 18 años. |
 | `validarPassword` | Verifica que la contraseña tenga mínimo 8 caracteres, incluyendo mayúscula, minúscula, número y carácter especial. |
-| `validarCURP` | Verifica que la CURP cumpla con el formato oficial mexicano. |
-| `validarTelefono` | Verifica que el teléfono contenga exactamente 10 dígitos. |
 
 ## Métodos Principales
 
@@ -216,21 +211,39 @@ Esto permite que `index.html` sepa quién inició sesión sin necesidad de un ba
 
 ### Login
 <!-- Insertar captura aquí -->
+![Login](img/login1.png)
+
+![Login Alerta](img/login2.png)
+
+![Login Alerta](img/login3.png)
 
 ### Sidebar abierto / cerrado
 <!-- Insertar captura aquí -->
 
-### Submenú Usuarios > Captura
-<!-- Insertar captura aquí -->
+![Sidebar](img/index1.png)
+
+![Sidebar](img/index2.png)
+
+![Sidebar](img/index3.png)
+
+![Sidebar](img/index4.png)
+
+![Sidebar](img/index5.png)
 
 ### Navbar con nombre de usuario y menú de salir
 <!-- Insertar captura aquí -->
+![Sidebar](img/index6.png)
 
 ### Formulario de alumnos con número de control
 <!-- Insertar captura aquí -->
+![Sidebar](img/index2.png)
 
-### Modal de edad
-<!-- Insertar captura aquí -->
+### Registro
+![Sidebar](img/registro1.png)
+
+![Sidebar](img/registro2.png)
+
+![Sidebar](img/registro3.png)
 
 ## Notas y Trabajo Futuro
 
